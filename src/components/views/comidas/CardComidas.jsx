@@ -1,6 +1,7 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
+// import React from 'react';
 import { Card, Button, Container } from 'react-bootstrap/'
-import DetalleComida from './DetalleComida';
+// import DetalleComida from './DetalleComida';
 
 const CardComidas = ({ recetas }) => {
 
