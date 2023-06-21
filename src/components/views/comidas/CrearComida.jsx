@@ -1,14 +1,12 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
 
 // import { crearReceta } from "../../helpers/queries";
 import { useState, useEffect } from "react";
 const CrearComida = () => {
   const [recetas, setRecetas] = useState([]);
 
-  const navegacion = useNavigate();
 
   const {
     register,
@@ -32,7 +30,6 @@ const CrearComida = () => {
     );
     reset();
     Swal.fire("Comida Guardada", "Guardado Exitoso", "success");
-    navegacion("/administrador");
     // crearReceta(comidaNueva).then((respuesta) => {
     //   if (respuesta.status === 201) {
     //     Swal.fire("Comida Guardada", "Guardado Exitoso", "success");

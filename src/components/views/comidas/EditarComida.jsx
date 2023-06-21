@@ -2,17 +2,21 @@ import { useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 // import { buscarcomida, editarReceta } from "../../helpers/queries";
 import Swal from "sweetalert2";
 const EditarComida = () => {
+    const navegacion = useNavigate();
+
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
     setValue,
-  } = useForm();
-  const { id } = useParams();
+} = useForm();
+const { id } = useParams();
   {
     console.log(id);
   }
@@ -49,6 +53,7 @@ const EditarComida = () => {
       text: "La comida se ha actualizado correctamente",
     });
     reset();
+    navegacion("/administrador");
   };
 
     // editarReceta(productoEditado, productoEditado.id).then((respuesta) => {
