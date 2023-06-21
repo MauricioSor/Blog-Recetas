@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { buscarcomida, editarReceta } from "../../helpers/queries";
+// import { buscarcomida, editarReceta } from "../../helpers/queries";
 import Swal from "sweetalert2";
 const EditarComida = () => {
   const {
@@ -18,13 +18,9 @@ const EditarComida = () => {
   }
   //   editarReceta();
   const recetasStorage = JSON.parse(localStorage.getItem("listaRecetas"));
-  {
-    console.log(recetasStorage);
-  }
+  {console.log(recetasStorage)}
   const recetaBuscada = recetasStorage[id];
-  {
-    console.log(recetaBuscada);
-  }
+  {console.log(recetaBuscada)}
   useEffect(() => {
     // buscarcomida(id).then((respuesta)=>{
     // if(respuesta){
@@ -34,10 +30,26 @@ const EditarComida = () => {
     setValue("imagen", recetaBuscada.imagen);
     setValue("categoria", recetaBuscada.categoria);
   }, []);
-  const enviar = (productoEditado) => {
-    console.log(productoEditado);
-    console.log(productoEditado.id);
-    
+
+    const enviar = (productoEditado) => {
+    const recetaActualizada = {
+      id: id,
+      nombre: productoEditado.nombre,
+      precio: productoEditado.precio,
+      imagen: productoEditado.imagen,
+      categoria: productoEditado.categoria,
+    };
+
+    recetasStorage[id] = recetaActualizada;
+    localStorage.setItem("listaRecetas", JSON.stringify(recetasStorage));
+
+    Swal.fire({
+      icon: "success",
+      title: "Comida actualizada",
+      text: "La comida se ha actualizado correctamente",
+    });
+    reset();
+  };
 
     // editarReceta(productoEditado, productoEditado.id).then((respuesta) => {
     //   if (respuesta.status === 200) {
@@ -51,7 +63,7 @@ const EditarComida = () => {
     //     );
     //   }
     // });
-  };
+  
   return (
     <section className="container mainSection">
       <h1 className="display-3">Editar Comida</h1>
