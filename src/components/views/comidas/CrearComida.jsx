@@ -21,15 +21,16 @@ const CrearComida = () => {
   }, []);
 
   const guardar = (comidaNueva) => {
+    setRecetas([...recetas, comidaNueva]);
+    localStorage.setItem(
+      "listaRecetas",
+      JSON.stringify([...recetas, comidaNueva])
+    );
     crearReceta(comidaNueva).then((respuesta) => {
       if (respuesta.status === 201) {
         Swal.fire("Comida Guardada", "Guardado Exitoso", "success");
         reset();
-        setRecetas([...recetas, comidaNueva]);
-        localStorage.setItem(
-          "listaRecetas",
-          JSON.stringify([...recetas, comidaNueva])
-        );
+
       } else {
         Swal.fire(
           "Error al Guardar",

@@ -42,27 +42,6 @@
       "imagen": "https://pics.filmaffinity.com/maybe_i_do-982667296-large.jpg",
       "categoria": "Simples",
       "id": 5
-    },
-    {
-      "nombre": "te",
-      "precio": "300",
-      "imagen": "https://pics.filmaffinity.com/maybe_i_do-982667296-large.jpg",
-      "categoria": "Bebida caliente",
-      "id": 6
-    },
-    {
-      "nombre": "pastel de papa",
-      "precio": "2500",
-      "imagen": "https://pics.filmaffinity.com/maybe_i_do-982667296-large.jpg",
-      "categoria": "comida al plato",
-      "id": 7
-    },
-    {
-      "nombre": "pizza con pan",
-      "precio": "3300",
-      "imagen": "https://pics.filmaffinity.com/maybe_i_do-982667296-large.jpg",
-      "categoria": "Comida al plato",
-      "id": 8
     }
   ]
 }
