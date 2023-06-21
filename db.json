@@ -26,9 +26,8 @@
       "id": 3,
       "nombre": "Pizza",
       "precio": 1900,
-      "categoria": "simples",
-      "pasos": "1.Cortar el pan 2. Poner dos fetas de queso 3. Dos fetas de salame, 3. Cerrar el pan",
-      "imagen": "https://media.istockphoto.com/id/1389527253/es/foto/pizza-vegetariana-por-encima-de-la-vista-minimalista-sobre-un-fondo-azul.jpg?s=612x612&w=0&k=20&c=X7hTaRfhbZLEUovzg6-tOhgBaSK1e4N2h2zWLID-1vI="
+      "imagen": "https://media.istockphoto.com/id/1389527253/es/foto/pizza-vegetariana-por-encima-de-la-vista-minimalista-sobre-un-fondo-azul.jpg?s=612x612&w=0&k=20&c=X7hTaRfhbZLEUovzg6-tOhgBaSK1e4N2h2zWLID-1vI=",
+      "categoria": "simples"
     },
     {
       "id": 4,
@@ -36,6 +35,34 @@
       "precio": "600",
       "imagen": "https://media.istockphoto.com/id/1159612483/es/foto/espresso-caliente-y-grano-de-caf%C3%A9-en-la-mesa-negra-con-enfoque-suave-y-sobre-la-luz-en-el.jpg?s=612x612&w=0&k=20&c=11iD49l1EXkjU-eWzdOeqPN346OpIVPNFzD8KyczW0c=",
       "categoria": "Bebida Caliente"
+    },
+    {
+      "nombre": "Chipa",
+      "precio": "500",
+      "imagen": "https://pics.filmaffinity.com/maybe_i_do-982667296-large.jpg",
+      "categoria": "Simples",
+      "id": 5
+    },
+    {
+      "nombre": "te",
+      "precio": "300",
+      "imagen": "https://pics.filmaffinity.com/maybe_i_do-982667296-large.jpg",
+      "categoria": "Bebida caliente",
+      "id": 6
+    },
+    {
+      "nombre": "pastel de papa",
+      "precio": "2500",
+      "imagen": "https://pics.filmaffinity.com/maybe_i_do-982667296-large.jpg",
+      "categoria": "comida al plato",
+      "id": 7
+    },
+    {
+      "nombre": "pizza con pan",
+      "precio": "3300",
+      "imagen": "https://pics.filmaffinity.com/maybe_i_do-982667296-large.jpg",
+      "categoria": "Comida al plato",
+      "id": 8
     }
   ]
 }
