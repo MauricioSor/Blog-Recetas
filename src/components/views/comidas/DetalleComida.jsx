@@ -7,7 +7,7 @@ import { borrarReceta } from '../../helpers/queries';
 import Swal from 'sweetalert2';
 import { useForm } from "react-hook-form";
 
-const DetalleComida = ({ item, index }) => {
+const DetalleComida = ({ item, index, actualizarComidas }) => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     const borrar = () => {
@@ -15,6 +15,7 @@ const DetalleComida = ({ item, index }) => {
         recetasStorage.splice(index, 1);
         localStorage.setItem("listaRecetas", JSON.stringify(recetasStorage));
         Swal.fire('Comida Eliminada', 'Actualizacion Exitosa', 'success');
+        actualizarComidas(recetasStorage);
         //         reset();
         //         return respuesta;
         //  borrarReceta(comida.id).then((respuesta) => {

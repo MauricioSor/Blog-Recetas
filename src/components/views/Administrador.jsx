@@ -1,6 +1,6 @@
-import { Table, Button } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 import { useEffect, useState } from "react";
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import DetalleComida from "./comidas/DetalleComida";
 // import { buscarcomidas } from "../helpers/queries";
@@ -12,6 +12,9 @@ const Administrador = () => {
     // })
     setComidas(JSON.parse(localStorage.getItem("listaRecetas")))
     },[]);
+    const actualizarComidas = (nuevaListaComidas) => {
+        setComidas(nuevaListaComidas);
+      };
     
     return (
         <section className="container mainSection">
@@ -34,7 +37,7 @@ const Administrador = () => {
                 <tbody>
                     {
                     comidas.map((item,index)=>(
-                    <DetalleComida key={index} item={item} index={index} />
+                    <DetalleComida key={index} item={item} index={index} actualizarComidas={actualizarComidas} />
                     ))
                     }
                 </tbody>
