@@ -26,19 +26,21 @@ const CrearComida = () => {
       "listaRecetas",
       JSON.stringify([...recetas, comidaNueva])
     );
-    crearReceta(comidaNueva).then((respuesta) => {
-      if (respuesta.status === 201) {
-        Swal.fire("Comida Guardada", "Guardado Exitoso", "success");
-        reset();
+    reset();
+    Swal.fire("Comida Guardada", "Guardado Exitoso", "success");
+    // crearReceta(comidaNueva).then((respuesta) => {
+    //   if (respuesta.status === 201) {
+    //     Swal.fire("Comida Guardada", "Guardado Exitoso", "success");
+    //     reset();
 
-      } else {
-        Swal.fire(
-          "Error al Guardar",
-          `El producto ${comidaNueva.nombre} no se pudo guardar`,
-          "error"
-        );
-      }
-    });
+    //   } else {
+    //     Swal.fire(
+    //       "Error al Guardar",
+    //       `El producto ${comidaNueva.nombre} no se pudo guardar`,
+    //       "error"
+    //     );
+    //   }
+    // });
   };
   return (
     <section className="container mainSection">

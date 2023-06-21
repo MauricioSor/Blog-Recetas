@@ -7,9 +7,10 @@ import { buscarcomidas } from "../helpers/queries";
 const Administrador = () => {
     const [comidas,setComidas]= useState([]);
     useEffect(() =>{
-    buscarcomidas().then((respuesta)=>{
-    respuesta?(setComidas(respuesta)):(Swal.fire('Error','Intente nuevamente','error'));    
-    })
+    // buscarcomidas().then((respuesta)=>{
+    // respuesta?(setComidas(respuesta)):(Swal.fire('Error','Intente nuevamente','error'));    
+    // })
+    setComidas(JSON.parse(localStorage.getItem("listaRecetas")))
     },[]);
     
     return (
@@ -33,7 +34,7 @@ const Administrador = () => {
                 <tbody>
                     {
                     comidas.map((item,index)=>(
-                    <DetalleComida key={index} item={item} />
+                    <DetalleComida key={index} item={item} index={index} />
                     ))
                     }
                 </tbody>
