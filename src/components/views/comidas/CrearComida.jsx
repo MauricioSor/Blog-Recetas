@@ -1,7 +1,7 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import { crearReceta } from "../../helpers/queries";
+// import { crearReceta } from "../../helpers/queries";
 import { useState, useEffect } from "react";
 const CrearComida = () => {
   const [recetas, setRecetas] = useState([]);

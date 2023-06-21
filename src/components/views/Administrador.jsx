@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import DetalleComida from "./comidas/DetalleComida";
-import { buscarcomidas } from "../helpers/queries";
+// import { buscarcomidas } from "../helpers/queries";
 const Administrador = () => {
     const [comidas,setComidas]= useState([]);
     useEffect(() =>{

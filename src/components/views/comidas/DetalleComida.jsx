@@ -10,7 +10,13 @@ import { useForm } from "react-hook-form";
 const DetalleComida = ({ item, index }) => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
-    const borrar = (comida) => {
+    const borrar = () => {
+        const recetasStorage = JSON.parse(localStorage.getItem("listaRecetas"));
+        recetasStorage.splice(index, 1);
+        localStorage.setItem("listaRecetas", JSON.stringify(recetasStorage));
+        Swal.fire('Comida Eliminada', 'Actualizacion Exitosa', 'success');
+        //         reset();
+        //         return respuesta;
         //  borrarReceta(comida.id).then((respuesta) => {
         //     if (respuesta.status === 200) {
         //         Swal.fire('Comida Eliminada', 'Actualizacion Exitosa', 'success');
@@ -36,7 +42,7 @@ const DetalleComida = ({ item, index }) => {
                     <td>
                         <Container className='d-flex'>
                             <Link className='btn btn-warning mx-1' to={'/administrador/EditarComida/' + index}>Editar</Link>
-                            <Button onClick={() => { borrar(item) }} variant='danger' type='submit'>Eliminar</Button>
+                            <Button onClick={() => { borrar() }} variant='danger' type='submit'>Eliminar</Button>
                         </Container>
                     </td>
                 </>
