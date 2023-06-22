@@ -11,7 +11,7 @@ const DetalleComida = ({ item, index, actualizarComidas }) => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     const borrar = () => {
-        const recetasStorage = JSON.parse(localStorage.getItem("listaRecetas"));
+        const recetasStorage = JSON.parse(localStorage.getItem("listaRecetas")) || [];
         recetasStorage.splice(index, 1);
         localStorage.setItem("listaRecetas", JSON.stringify(recetasStorage));
         Swal.fire('Comida Eliminada', 'Actualizacion Exitosa', 'success');

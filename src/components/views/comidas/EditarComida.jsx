@@ -21,7 +21,7 @@ const { id } = useParams();
     console.log(id);
   }
   //   editarReceta();
-  const recetasStorage = JSON.parse(localStorage.getItem("listaRecetas"));
+  const recetasStorage = JSON.parse(localStorage.getItem("listaRecetas")) || [];
   {console.log(recetasStorage)}
   const recetaBuscada = recetasStorage[id];
   {console.log(recetaBuscada)}

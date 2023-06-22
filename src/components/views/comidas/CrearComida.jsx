@@ -16,7 +16,7 @@ const CrearComida = () => {
   } = useForm();
 
   useEffect(() => {
-    const recetasStorage = JSON.parse(localStorage.getItem("listaRecetas"));
+    const recetasStorage = JSON.parse(localStorage.getItem("listaRecetas")) || [];
     if (recetasStorage) {
       setRecetas(recetasStorage);
     }

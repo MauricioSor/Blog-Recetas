@@ -10,7 +10,7 @@ const Administrador = () => {
     // buscarcomidas().then((respuesta)=>{
     // respuesta?(setComidas(respuesta)):(Swal.fire('Error','Intente nuevamente','error'));    
     // })
-    setComidas(JSON.parse(localStorage.getItem("listaRecetas")))
+    setComidas(JSON.parse(localStorage.getItem("listaRecetas")) || [])
     },[]);
     const actualizarComidas = (nuevaListaComidas) => {
         setComidas(nuevaListaComidas);

@@ -4,12 +4,11 @@ import { useState, useEffect } from "react";
 import CardComidas from "./comidas/CardComidas";
 const Home = () => {
   const [mostrarSpinner, setMostrarSpinner] = useState(true);
-  const [recetas, setRecetas] = useState({});
+  const [recetas, setRecetas] = useState([]);
   const buscarRecetas = () => {
 
-      setRecetas(JSON.parse(localStorage.getItem("listaRecetas")))
+      setRecetas(JSON.parse(localStorage.getItem("listaRecetas")) || [])
       setMostrarSpinner(false);
-    
   };
   useEffect(() => {
     setMostrarSpinner(true);
