@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
-import Home from './components/views/home'
+import Home from './components/views/home';
 import Menu from './components/common/Menu'
 import Footer from './components/common/Footer'
 import Error from './components/views/Error'

@@ -11,12 +11,26 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const userAdmin = {
+        id: 1 ,
+        usuario: "mauricio@admin.com",
+        password: "123Abcde"
+    }
+    localStorage.setItem("listaUsuario",JSON.stringify(userAdmin));
 
     const enviarDatos = (usuario) => {
         console.log(usuario);
         iniciarSesion(usuario).then((respuesta) => {
-            respuesta ? (sessionStorage.setItem('usuario', JSON.stringify(respuesta)), setUsuarioLogueado(respuesta), reset(), navegacion('/Administrador')) : undefined
+            respuesta ? (sessionStorage.setItem('usuario', JSON.stringify(respuesta)),setUsuarioLogueado(respuesta),reset(),navegacion('/Administrador')) : undefined
         });
+        const usuarioInicioSesion = JSON.parse(localStorage.getItem("listaUsuario"));
+        console.log(usuarioInicioSesion);
+        // const usuarioEncontrado = usuarioInicioSesion.find((item) => {item.usuario === usuario.email})
+        if (usuarioInicioSesion.usuario === usuario.email && usuarioInicioSesion.password === usuario.password) {
+            setUsuarioLogueado(usuarioInicioSesion);
+            (sessionStorage.setItem('usuario', JSON.stringify(usuarioInicioSesion)),setUsuarioLogueado(usuarioInicioSesion),reset(),navegacion('/Administrador'));
+        }
+            // usuario.email === usuarioInicioSesion.usuario && usuario.password === usuarioInicioSesion.password ? (sessionStorage.setItem('usuario', JSON.stringify(respuesta)),setUsuarioLogueado(respuesta),reset(),navegacion('/Administrador')) : undefined
     }
     const navegacion = useNavigate();
     const cerrarSesion = () => {
@@ -111,7 +125,6 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                 "id": 10
             }
         ];
-
         localStorage.setItem("listaRecetas", JSON.stringify(comida));
     };
     return (

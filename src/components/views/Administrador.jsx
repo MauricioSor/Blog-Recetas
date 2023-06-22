@@ -7,9 +7,6 @@ import DetalleComida from "./comidas/DetalleComida";
 const Administrador = () => {
     const [comidas, setComidas] = useState([]);
     useEffect(() => {
-        // buscarcomidas().then((respuesta)=>{
-        // respuesta?(setComidas(respuesta)):(Swal.fire('Error','Intente nuevamente','error'));    
-        // })
         setComidas(JSON.parse(localStorage.getItem("listaRecetas")) || [])
     }, []);
     const actualizarComidas = (nuevaListaComidas) => {
