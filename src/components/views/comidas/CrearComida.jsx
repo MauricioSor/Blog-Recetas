@@ -17,17 +17,13 @@ const CrearComida = () => {
   useEffect(() => {
     const recetasStorage = JSON.parse(localStorage.getItem("listaRecetas")) || [];
     if (recetasStorage) {
-      cargar();
       setRecetas(recetasStorage);
     }
   }, []);
   
   const guardar = (comidaNueva) => {
+    localStorage.setItem("listaRecetas",JSON.stringify([...recetas, comidaNueva]));
     setRecetas([...recetas, comidaNueva]);
-    localStorage.setItem(
-      "listaRecetas",
-      JSON.stringify([...recetas, comidaNueva])
-    );
     reset();
     Swal.fire("Comida Guardada", "Guardado Exitoso", "success");
   };
