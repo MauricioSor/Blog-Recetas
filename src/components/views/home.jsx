@@ -1,4 +1,4 @@
-import { Container, Carousel, Spinner } from "react-bootstrap";
+import { Carousel, Spinner } from "react-bootstrap";
 // import { buscarcomidas } from "../helpers/queries";
 import { useState, useEffect } from "react";
 import CardComidas from "./comidas/CardComidas";
